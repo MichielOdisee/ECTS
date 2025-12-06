@@ -120,7 +120,10 @@ async function runQuery(){
     output.textContent = "⏳ verwerken...";
 
     const engine = newEngine();
-    const result = await engine.query(query,{ sources:["eloict-curriculum-latest.ttl"] });
+   const result = await engine.query(query,{
+    sources:["https://raw.githubusercontent.com/MichielOdisee/ECTS/main/eloict-curriculum-latest.ttl"]
+});
+
     const bindings = await result.bindings();
 
     output.textContent = bindings.length > 0
