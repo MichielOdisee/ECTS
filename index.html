@@ -1,154 +1,120 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <title>ELO ICT – Linked Data Dataset</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root{
-      --accent:#2c7be5;
-      --bg-light:#f5f5f5;
-    }
-
+<meta charset="UTF-8">
+<title>ELOICT Linked Data Dataset</title>
+<style>
     body{
-      font-family:Arial, sans-serif;
-      max-width:900px;
-      margin:40px auto;
-      padding:30px 20px;
-      line-height:1.6;
-      color:#222;
+        font-family:Arial, sans-serif;
+        max-width:900px;
+        margin:40px auto;
+        padding:30px;
+        line-height:1.6;
+        color:#222;
     }
-
-    h1{
-      color:var(--accent);
-      margin-bottom:0.25rem;
-    }
-
-    h2{
-      margin-top:2rem;
-      margin-bottom:0.4rem;
-    }
-
-    p{
-      margin:0.4rem 0 0.2rem;
-    }
-
-    .context{
-      background:#eef5ff;
-      border-left:4px solid var(--accent);
-      padding:10px 14px;
-      border-radius:4px;
-      margin:1rem 0 1.5rem;
-      font-size:0.95rem;
-    }
-
+    h1{color:#2c7be5;margin-bottom:5px;font-size:32px;}
+    h2{margin-top:32px;color:#333;}
+    a{color:#2575e6;font-weight:bold;text-decoration:none;}
+    a:hover{text-decoration:underline;}
     code, pre{
-      background:var(--bg-light);
-      padding:12px;
-      border-radius:6px;
-      display:block;
-      white-space:pre-wrap;
-      font-family:Consolas, "Fira Code", monospace;
-      font-size:0.9rem;
+        background:#f6f6f6;
+        padding:12px;
+        border-radius:6px;
+        display:block;
+        white-space:pre-wrap;
+        border:1px solid #ddd;
     }
-
-    a{
-      color:var(--accent);
-      font-weight:bold;
-      text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
-    }
-
     footer{
-      margin-top:40px;
-      font-size:0.85rem;
-      color:#555;
-      border-top:1px solid #ddd;
-      padding-top:10px;
+        margin-top:50px;
+        font-size:14px;
+        color:#555;
+        text-align:center;
     }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <h1>ELO ICT – Linked Data Dataset</h1>
-  <p><b>RDF-dataset van de opleiding ELO ICT (Odisee Hogeschool)</b></p>
+<h1>ELOICT – Linked Data Dataset</h1>
+<p>
+Open RDF-/Linked Data dataset van de opleiding <b>ELO ICT – Odisee Hogeschool</b>.
+De dataset bevat vakken, docenten, studiepunten, prerequisites en skills in <b>Turtle (.ttl)</b>.
+<br>
+Gebouwd in het kader van het vak <b>POP – Professionele Ontwikkeling & Portfolio</b>.
+</p>
 
-  <div class="context">
-    <b>Projectcontext:</b> deze linked-data set is uitgewerkt in het kader van het vak
-    <b>POP (Persoonlijk OntwikkelingsProject)</b> binnen de opleiding ELO ICT.
-    De data is samengesteld door een student en is geen officieel Odisee-product,
-    maar verwijst wel naar officiële cursusfiches via <code>rdfs:seeAlso</code>.
-  </div>
+<h2>🔗 Dataset online bekijken</h2>
+<p>
+<a href="https://michielodisee.github.io/ECTS/">https://michielodisee.github.io/ECTS/</a>
+</p>
 
-  <p>
-    De dataset beschrijft alle vakken, docenten, studiepunten, skills en
-    relaties (zoals prerequisites en specialisaties) in
-    <b>Turtle (.ttl)</b>-formaat. De URI-ruimte wordt genormaliseerd onder
-    <code>http://odisee.be/eloict#</code>, zodat de data eenvoudig te hergebruiken
-    is in SPARQL-endpoints en knowledge graphs.
-  </p>
+<h2>📥 Download</h2>
+<p>
+<b>Meest recente dataset:</b><br>
+<a href="eloict-curriculum-latest.ttl" download>⬇ eloict-curriculum-latest.ttl</a>
+<br><br>
+<b>Versie-archief:</b><br>
+<a href="eloict-curriculum_v0.1.ttl" download>📄 eloict-curriculum_v0.1.ttl</a>
+</p>
 
-  <h2>🔗 Dataset online browsen</h2>
-  <p>
-    <a href="https://michielodisee.github.io/ECTS/">
-      https://michielodisee.github.io/ECTS/
-    </a>
-  </p>
-
-  <h2>📥 Download dataset</h2>
-  <p>
-    <a href="full-new.ttl" download>⭳ full-new.ttl</a><br>
-    <small>(volledige Turtle-export met vakken, docenten, skills en links naar onderwijsaanbod)</small>
-  </p>
-
-  <h2>🧠 Voorbeeld SPARQL-query</h2>
-  <p>
-    Onderstaande query geeft een professioneel overzicht van alle
-    <code>eloict:CourseUnit</code>-vakken met code, studiepunten, semester,
-    fase, docenten en coördinator.
-  </p>
-
-  <pre><code>PREFIX eloict: &lt;http://odisee.be/eloict#&gt;
-PREFIX rdfs:   &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+<h2>🧠 Voorbeeld SPARQL Query</h2>
+<pre>
+PREFIX eloict: <http://odisee.be/eloict#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT 
-    (STRAFTER(STR(?vak), "#") AS ?vakID)
+    (STRAFTER(STR(?vak),"#") AS ?vakID)
     ?naam
     ?code
-    (CONCAT(STR(?credits), " SP") AS ?studiepunten)
-    (STRAFTER(STR(?sem), "#") AS ?semester)
-    (STRAFTER(STR(?ph),  "#") AS ?fase)
+    (CONCAT(STR(?credits)," SP") AS ?studiepunten)
+    (STRAFTER(STR(?sem),"#") AS ?semester)
+    (STRAFTER(STR(?ph),"#") AS ?fase)
     (GROUP_CONCAT(DISTINCT ?lectNaam; SEPARATOR=", ") AS ?docenten)
-    ?coordinatorNaam
+    ?coordinator
 WHERE {
     ?vak a eloict:CourseUnit ;
-         rdfs:label            ?naam ;
-         eloict:courseCode     ?code ;
-         eloict:hasCredits     ?credits ;
+         rdfs:label ?naam ;
+         eloict:courseCode ?code ;
+         eloict:hasCredits ?credits ;
          eloict:belongsToSemester ?sem ;
-         eloict:belongsToPhase    ?ph .
+         eloict:belongsToPhase ?ph .
 
-    OPTIONAL {
-        ?vak  eloict:hasLecturer  ?lect .
-        ?lect rdfs:label          ?lectNaam .
+    OPTIONAL{
+        ?vak eloict:hasLecturer ?lect .
+        ?lect rdfs:label ?lectNaam .
     }
-
-    OPTIONAL {
-        ?vak   eloict:hasCoordinator ?coord .
-        ?coord rdfs:label            ?coordinatorNaam .
+    OPTIONAL{
+        ?vak eloict:hasCoordinator ?c .
+        ?c rdfs:label ?coordinator .
     }
 }
-GROUP BY ?vak ?naam ?code ?credits ?sem ?ph ?coordinatorNaam
+GROUP BY ?vak ?naam ?code ?credits ?sem ?ph ?coordinator
 ORDER BY ?fase ?semester ?naam
-</code></pre>
+</pre>
 
-  <footer>
-    Gemaakt door Michiel Van de Velde (ELO ICT, Odisee) – POP-project Linked Data ECTS.
-  </footer>
+<h2>💻 Dataset lokaal gebruiken</h2>
+<p>
+1. Download <b>eloict-curriculum-latest.ttl</b> hierboven<br>
+2. Open met een tool naar keuze:
+</p>
+<ul>
+<li>🔸 <b>Apache Jena Fuseki</b> → localhost SPARQL endpoint draaien</li>
+<li>🔸 <b>GraphDB / Stardog / OntoRefine</b> voor visuele graph weergave</li>
+<li>🔸 <b>VSCode + Turtle plugin</b> om data te bekijken</li>
+</ul>
+
+<p><u>Snel lokaal hosten in Fuseki</u>:</p>
+<pre>
+1. Start Fuseki → http://localhost:3030
+2. Create Dataset → Upload eloict-curriculum-latest.ttl
+3. Open SPARQL tab → plak de query hierboven
+4. Resultaten verschijnen direct
+</pre>
+
+<footer>
+📄 Dataset wordt onderhouden in GitHub – laatste update automatisch gelinkt aan <b>–latest</b><br>
+Gemaakt door <b>Michiel Van de Velde</b>
+</footer>
 
 </body>
 </html>
