@@ -91,47 +91,6 @@ LIMIT 20
 </pre>
 
 
-<h2>SPARQL Playground</h2>
-<p>
-Laat queries direct los op <b>eloict-curriculum-latest.ttl</b>.  
-Werkt zowel <u>offline</u> als via GitHub Pages.
-</p>
-
-<textarea id="queryInput">
-PREFIX eloict: <http://odisee.be/eloict#>
-PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
-
-SELECT ?vak ?naam WHERE {
-    ?vak a eloict:CourseUnit ;
-         rdfs:label ?naam .
-}
-LIMIT 20
-</textarea>
-
-<button onclick="runQuery()">Query uitvoeren</button>
-<pre id="output">Resultaten verschijnen hier...</pre>
-
-<script type="module">
-import { newEngine } from "https://cdn.jsdelivr.net/npm/@comunica/actor-init-sparql/+esm";
-
-async function runQuery(){
-    const query = document.getElementById("queryInput").value;
-    const output = document.getElementById("output");
-    output.textContent = "⏳ verwerken...";
-
-    const engine = newEngine();
-   const result = await engine.query(query,{
-    sources:["https://raw.githubusercontent.com/MichielOdisee/ECTS/main/eloict-curriculum-latest.ttl"]
-});
-
-    const bindings = await result.bindings();
-
-    output.textContent = bindings.length > 0
-        ? bindings.map(b => [...b.entries()].map(([k,v])=>`${k}: ${v.value}`).join("\n")).join("\n\n")
-        : "Geen resultaten.";
-}
-</script>
-
 <footer>
 Dataset onderhouden via GitHub • automatische link naar <b>–latest</b><br>
 Gemaakt door <b>Michiel Van de Velde</b>
