@@ -1,0 +1,65 @@
+@prefix eloict: <http://odisee.be/eloict#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+
+
+### ALGEMENE BASISVAKKEN – Gemeenschappelijk
+
+
+eloict:ICTTrack a eloict:Track .
+
+eloict:ICTTrack eloict:hasGeneralCourse eloict:ElektronischeNetwerken .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:ProgrammingFundamentals .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:WebFundamentals .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:InfrastructureFundamentals .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:FundamentalSkills .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:OOProgramming .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:Beroepsethiek .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:Hackathon .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:DatabaseProgramming .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:ITEssentials .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:ProjectWetenschappelijkRapporteren .
+eloict:ICTTrack eloict:hasGeneralCourse eloict:AgileTeamProject .
+
+
+### SOFTWARE & AI DEVELOPER
+
+
+eloict:SoftwareAIDeveloper a eloict:Specialisation ;
+    eloict:partOfTrack eloict:ICTTrack ;
+    eloict:hasMandatoryCourse eloict:DotNETAdvanced ;
+    eloict:hasMandatoryCourse eloict:DataScience ;
+    eloict:hasMandatoryCourse eloict:AppliedProgramming ;
+    eloict:hasMandatoryCourse eloict:AIProgramming ;
+    eloict:hasMandatoryCourse eloict:DotNETProgramming ;
+    eloict:hasMandatoryCourse eloict:AlgoData .
+
+
+### WEB & MOBILE DEVELOPER
+
+
+eloict:WebDeveloper a eloict:Specialisation ;
+    eloict:partOfTrack eloict:ICTTrack ;
+    eloict:hasMandatoryCourse eloict:JavascriptDevelopment ;
+    eloict:hasMandatoryCourse eloict:BackendDevelopment ;
+    eloict:hasMandatoryCourse eloict:FullstackIntroduction ;
+    eloict:hasMandatoryCourse eloict:WebFrameworks ;
+    eloict:hasMandatoryCourse eloict:FullstackAdvanced ;
+    eloict:hasMandatoryCourse eloict:MobileAppDevelopment .
+
+
+### NETWORK & SECURITY ENGINEER
+
+
+eloict:NetworkSecurityEngineer a eloict:Specialisation ;
+    eloict:partOfTrack eloict:ICTTrack ;
+    eloict:hasMandatoryCourse eloict:NetworkInfrastructure1 ;
+    eloict:hasMandatoryCourse eloict:ServerInfrastructureWindows ; 
+    eloict:hasMandatoryCourse eloict:NetworkInfrastructure2 ;
+    eloict:hasMandatoryCourse eloict:ServerInfrastructureLinux ;
+    eloict:hasMandatoryCourse eloict:DataSecurity ;
+    eloict:hasMandatoryCourse eloict:InfrastructureAsCode ;
+    eloict:hasMandatoryCourse eloict:CloudInfrastructure ;
+    eloict:hasMandatoryCourse eloict:SecurityInfrastructure .

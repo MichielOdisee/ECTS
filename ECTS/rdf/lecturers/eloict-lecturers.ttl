@@ -1,0 +1,50 @@
+@prefix eloict: <http://odisee.be/eloict#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+
+eloict:M_Wyns            a eloict:Lecturer ; rdfs:label "M. Wyns" .
+eloict:D_Claus           a eloict:Lecturer ; rdfs:label "D. Claus" .
+eloict:M_De_Donder       a eloict:Lecturer ; rdfs:label "M. De Donder" .
+eloict:E_Van_Nechel      a eloict:Lecturer ; rdfs:label "E. Van Nechel" .
+
+eloict:K_Verbeeck        a eloict:Lecturer ; rdfs:label "K. Verbeeck" .
+eloict:Y_Blancquaert     a eloict:Lecturer ; rdfs:label "Y. Blancquaert" .
+eloict:E_Jacobs          a eloict:Lecturer ; rdfs:label "E. Jacobs" .
+eloict:S_Sanders         a eloict:Lecturer ; rdfs:label "S. Sanders" .
+eloict:K_Van_Assche      a eloict:Lecturer ; rdfs:label "K. Van Assche" .
+eloict:T_Van_den_Bossche a eloict:Lecturer ; rdfs:label "T. Van den Bossche" .
+
+eloict:B_Delrue          a eloict:Lecturer ; rdfs:label "B. Delrue" .
+eloict:R_De_Wilde        a eloict:Lecturer ; rdfs:label "R. De Wilde" .
+eloict:D_De_Winne        a eloict:Lecturer ; rdfs:label "D. De Winne" .
+
+eloict:T_Cordemans       a eloict:Lecturer ; rdfs:label "T. Cordemans" .
+eloict:S_Fabre           a eloict:Lecturer ; rdfs:label "S. Fabre" .
+
+eloict:P_Demeester       a eloict:Lecturer ; rdfs:label "P. Demeester" .
+eloict:L_Bracke          a eloict:Lecturer ; rdfs:label "L. Bracke" .
+eloict:J_Van_de_Walle    a eloict:Lecturer ; rdfs:label "J. Van de Walle" .
+
+eloict:T_Vermeulen       a eloict:Lecturer ; rdfs:label "T. Vermeulen" .
+eloict:P_Coussens        a eloict:Lecturer ; rdfs:label "P. Coussens" .
+
+eloict:L_Knop            a eloict:Lecturer ; rdfs:label "L. Knop" .
+eloict:H_Vanderper       a eloict:Lecturer ; rdfs:label "H. Vanderper" .
+eloict:S_Martens         a eloict:Lecturer ; rdfs:label "S. Martens" .
+
+eloict:B_De_Waele        a eloict:Lecturer ; rdfs:label "B. De Waele" .
+eloict:S_Knockaert       a eloict:Lecturer ; rdfs:label "S. Knockaert" .
+eloict:R_Van_Steenberghe a eloict:Lecturer ; rdfs:label "R. Van Steenberghe" .
+
+eloict:A_Abdul_Khalil    a eloict:Lecturer ; rdfs:label "A. Abdul Khalil" .
+eloict:P_Van_Peteghem    a eloict:Lecturer ; rdfs:label "P. Van Peteghem" .
+
+eloict:E_Mettepenningen  a eloict:Lecturer ; rdfs:label "E. Mettepenningen" .
+eloict:S_Vrijdags        a eloict:Lecturer ; rdfs:label "S. Vrijdags" .
+eloict:E_Peeters         a eloict:Lecturer ; rdfs:label "E. Peeters" .
+eloict:R_Decoster        a eloict:Lecturer ; rdfs:label "R. Decoster" .
+
+eloict:M_Vanleke         a eloict:Lecturer ; rdfs:label "M. Vanleke" .
+eloict:J_Maervoet        a eloict:Lecturer ; rdfs:label "J. Maervoet" .
+eloict:J_De_Geest        a eloict:Lecturer ; rdfs:label "J. De Geest" .
+
+eloict:H_Stevens         a eloict:Lecturer ; rdfs:label "H. Stevens" .

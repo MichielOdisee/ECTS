@@ -1,0 +1,85 @@
+@prefix eloict: <http://odisee.be/eloict#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+eloict:FrontendDesign a eloict:CourseUnit ;
+    rdfs:label "Front-end Design"@nl ;
+    eloict:courseCode "OGI06G" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase1 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:D_De_Winne ;
+    eloict:hasLecturer eloict:D_De_Winne ,
+                        eloict:A_AbdulKhalil ,
+                        eloict:R_DeWilde .
+
+eloict:JavascriptDevelopment a eloict:CourseUnit ;
+    rdfs:label "Javascript Development"@nl ;
+    eloict:courseCode "OGI06H" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase1 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:FrontendDesign ;
+    eloict:hasCoordinator eloict:B_Delrue ;
+    eloict:hasLecturer eloict:B_Delrue .
+
+eloict:BackendDevelopment a eloict:CourseUnit ;
+    rdfs:label "Back-end Development"@nl ;
+    eloict:courseCode "OGI05H" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:JavascriptDevelopment ;
+    eloict:hasCoordinator eloict:J_Maervoet ;
+    eloict:hasLecturer eloict:J_Maervoet ,
+                        eloict:P_VanPeteghem .
+
+eloict:FullstackIntroduction a eloict:CourseUnit ;
+    rdfs:label "Full-stack Introduction"@nl ;
+    eloict:courseCode "OGI05I" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:BackendDevelopment ,
+                          eloict:JavascriptDevelopment ;
+    eloict:hasCoordinator eloict:J_Maervoet ;
+    eloict:hasLecturer eloict:B_Delrue ,
+                        eloict:J_Maervoet ,
+                        eloict:P_VanPeteghem .
+
+eloict:WebFrameworks a eloict:CourseUnit ;
+    rdfs:label "Web Frameworks"@nl ;
+    eloict:courseCode "OGI06I" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:JavascriptDevelopment ;
+    eloict:hasCoordinator eloict:B_Delrue ;
+    eloict:hasLecturer eloict:B_Delrue ,
+                        eloict:J_Maervoet .
+
+eloict:FullstackAdvanced a eloict:CourseUnit ;
+    rdfs:label "Full-stack Advanced"@nl ;
+    eloict:courseCode "OGI06J" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:FullstackIntro ,
+                          eloict:BackendDevelopment ,
+                          eloict:JavascriptDevelopment ;
+    eloict:hasCoordinator eloict:B_Delrue ;
+    eloict:hasLecturer eloict:B_Delrue ,
+                        eloict:J_Maervoet .
+
+eloict:MobileAppDevelopment a eloict:CourseUnit ;
+    rdfs:label "Mobile Application Development"@nl ;
+    eloict:courseCode "OGI03Z" ;
+    eloict:hasCredits 12 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:FullstackIntro ,
+                          eloict:WebFrameworks ;
+    eloict:hasCoordinator eloict:R_DeWilde ;
+    eloict:hasLecturer eloict:R_DeWilde ,
+                        eloict:J_Maervoet .

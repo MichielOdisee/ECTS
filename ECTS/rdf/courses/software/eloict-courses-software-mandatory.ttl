@@ -1,0 +1,63 @@
+@prefix eloict: <http://odisee.be/eloict#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+eloict:DotNETProgramming a eloict:CourseUnit ;
+    rdfs:label ".NET Programming"@nl ;
+    eloict:courseCode "OGI02X" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:Y_Blancquaert ;
+    eloict:hasLecturer eloict:Y_Blancquaert, eloict:E_Jacobs, eloict:K_Van_Assche .
+
+eloict:DotNETAdvanced a eloict:CourseUnit ;
+    rdfs:label ".NET Advanced Programming"@nl ;
+    eloict:courseCode "OGI02Y" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:DotNETProgramming ;
+    eloict:hasCoordinator eloict:Y_Blancquaert ;
+    eloict:hasLecturer eloict:Y_Blancquaert, eloict:K_Van_Assche, eloict:T_Vermeulen .
+
+eloict:AlgoData a eloict:CourseUnit ;
+    rdfs:label "Algo & Data"@nl ;
+    eloict:courseCode "OGI02Z" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:P_Demeester ;
+    eloict:hasLecturer eloict:P_Demeester, eloict:K_Verbeeck .
+
+eloict:DataScience a eloict:CourseUnit ;
+    rdfs:label "Data Science"@nl ;
+    eloict:courseCode "OGI03A" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:AlgoData ;
+    eloict:hasCoordinator eloict:K_Verbeeck ;
+    eloict:hasLecturer eloict:K_Verbeeck, eloict:P_Demeester .
+
+eloict:AppliedProgramming a eloict:CourseUnit ;
+    rdfs:label "Applied Programming"@nl ;
+    eloict:courseCode "OGI03X" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:DotNETProgramming ;
+    eloict:hasCoordinator eloict:T_Vermeulen ;
+    eloict:hasLecturer eloict:T_Vermeulen, eloict:J_Maervoet .
+
+eloict:AIProgramming a eloict:CourseUnit ;
+    rdfs:label "AI"@nl ;
+    eloict:courseCode "OGI03Y" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:AlgoData ;
+    eloict:hasCoordinator eloict:K_Verbeeck ;
+    eloict:hasLecturer eloict:K_Verbeeck ,eloict:P_Demeester ,eloict:J_Maervoet ,eloict:T_Van_den_Bossche .

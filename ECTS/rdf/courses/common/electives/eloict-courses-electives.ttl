@@ -1,0 +1,252 @@
+@prefix eloict: <http://odisee.be/eloict#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+
+eloict:ElektronischeOntwerptechnieken a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Elektronische Ontwerptechnieken"@nl ;
+    eloict:courseCode "OGI06K" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:D_Claus ;
+    eloict:hasLecturer eloict:D_Claus .
+
+eloict:ElektronischeUitvoeringstechnieken a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Elektronische Uitvoeringstechnieken"@nl ;
+    eloict:courseCode "OGI06L" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:D_Claus ;
+    eloict:hasLecturer eloict:D_Claus .
+
+eloict:AnalogeSystemen a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Analoge Systemen"@nl ;
+    eloict:courseCode "OGI03D" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:M_De_Donder ;
+    eloict:hasLecturer eloict:M_De_Donder .
+
+eloict:Filters a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Filters"@nl ;
+    eloict:courseCode "OGI03Q" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:E_Van_Nechel ;
+    eloict:hasLecturer eloict:E_Van_Nechel .
+
+# gecontroleerd
+
+eloict:IoTMicrocontrollers_S1 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "IoT: Microcontrollers"@nl ;
+    eloict:courseCode "OGI03E" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:M_Wyns ;
+    eloict:hasLecturer eloict:M_Wyns , eloict:T_Vermeulen .
+
+eloict:IoTMicrocontrollers_S2 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "IoT: Microcontrollers"@nl ;
+    eloict:courseCode "OGI05J" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:M_Wyns ;
+    eloict:hasLecturer eloict:M_Wyns , eloict:T_Vermeulen .
+
+eloict:IoTMicrocontrollers_S1 eloict:exclusiveWith eloict:IoTMicrocontrollers_S2 .
+eloict:IoTMicrocontrollers_S2 eloict:exclusiveWith eloict:IoTMicrocontrollers_S1 .
+
+# gecontroleerd
+eloict:IoTDatacommunicatie a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "IoT: Datacommunicatie"@nl ;
+    eloict:courseCode "OGI03S" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:P_Coussens ;
+    eloict:hasLecturer eloict:P_Coussens .
+
+eloict:IoTEmbeddedLinux a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "IoT: Embedded Linux"@nl ;
+    eloict:courseCode "OGI04N" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:M_Wyns ;
+    eloict:hasLecturer eloict:M_Wyns .
+
+# gecontroleerd
+
+eloict:UXDesign a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "UX Design"@nl ;
+    eloict:courseCode "OGI03L" ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:D_De_Winne ;
+    eloict:hasLecturer eloict:D_De_Winne .
+
+eloict:WebTopics_S1 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Web Topics"@nl ;
+    eloict:courseCode "OGI03M" ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCredits 6 ;
+    eloict:hasCoordinator eloict:B_Delrue ;
+    eloict:hasLecturer eloict:B_Delrue .
+
+eloict:WebTopics_S2 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Web Topics Advanced"@nl ;
+    eloict:courseCode "OGI04J" ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCredits 6 ;
+    eloict:hasCoordinator eloict:B_Delrue ;
+    eloict:hasLecturer eloict:B_Delrue, eloict:B_De_Waele .
+
+# gecontroleerd
+eloict:WebTopics_S1 eloict:exclusiveWith eloict:WebTopics_S2 .
+eloict:WebTopics_S2 eloict:exclusiveWith eloict:WebTopics_S1 .
+
+eloict:GameDevelopmentUnityCSharp a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Game Development with Unity & C#"@nl ;
+    eloict:courseCode "OGI05K" ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCredits 6 ;
+    eloict:hasCoordinator eloict:Y_Blancquaert ;
+    eloict:hasLecturer eloict:Y_Blancquaert .
+
+
+eloict:Signaalverwerking_S1 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Signaalverwerking"@nl ;
+    eloict:courseCode "OGI03N" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:P_Coussens ;
+    eloict:hasLecturer eloict:P_Coussens .
+
+eloict:Signaalverwerking_S2 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Signaalverwerking voor ICT"@nl ;
+    eloict:courseCode "OGI05M" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:P_Coussens ;
+    eloict:hasLecturer eloict:P_Coussens .
+
+eloict:Signaalverwerking_S1 eloict:exclusiveWith eloict:Signaalverwerking_S2 .
+eloict:Signaalverwerking_S2 eloict:exclusiveWith eloict:Signaalverwerking_S1 .
+# gecontroleerd
+
+eloict:Telecommunicatie_S1 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Telecommunicatie"@nl ;
+    eloict:courseCode "OGI03R" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:E_Van_Nechel ;
+    eloict:hasLecturer eloict:E_Van_Nechel .
+
+eloict:Telecommunicatie_S2 a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Telecommunicatie"@nl ;
+    eloict:courseCode "OGI03R" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:E_Van_Nechel ;
+    eloict:hasLecturer eloict:E_Van_Nechel .
+
+eloict:Telecommunicatie_S1 eloict:exclusiveWith eloict:Telecommunicatie_S2 .
+eloict:Telecommunicatie_S2 eloict:exclusiveWith eloict:Telecommunicatie_S1 .
+
+# gecontroleerd
+
+eloict:EntrepreneurialSkills a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Entrepreneurial Skills"@nl ;
+    eloict:courseCode "OAB15A" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:E_Mettepenningen ;
+    eloict:hasLecturer eloict:E_Mettepenningen , eloict:S_Vrijdags .
+
+eloict:PersoonlijkOntwikkelingsplan a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Persoonlijk Ontwikkelingsplan"@nl ;
+    eloict:courseCode "OGI04O" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:hasCoordinator eloict:E_Van_Nechel ;
+    eloict:hasLecturer eloict:E_Van_Nechel , eloict:J_Maervoet .
+
+eloict:MobiliteitLight a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Mobiliteit Light"@nl ;
+    eloict:courseCode "OGI04P" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:K_Van_Assche ;
+    eloict:hasLecturer eloict:K_Van_Assche .
+
+eloict:MobiliteitFull a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Mobiliteit Full"@nl ;
+    eloict:courseCode "OGI04S" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:K_Van_Assche ;
+    eloict:hasLecturer eloict:K_Van_Assche .
+
+eloict:AcademischeMobiliteit a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Academische Mobiliteit"@nl ;
+    eloict:courseCode "OGI04T" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:P_Demeester ;
+    eloict:hasLecturer eloict:P_Demeester .
+
+eloict:UnlimitedLearning a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Unlimited Learning"@nl ;
+    eloict:courseCode "OGI04U" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:D_De_Winne ;
+    eloict:hasLecturer eloict:D_De_Winne .
+
+eloict:Ondernemen a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Ondernemen"@nl ;
+    eloict:courseCode "OI3006" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase2 , eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:E_Peeters ;
+    eloict:hasLecturer eloict:E_Peeters .
+
+eloict:VoorbereidingWiskundeMaster a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Voorbereiding Wiskunde Masterprogramma"@nl ;
+    eloict:courseCode "OGI05D" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:P_Demeester ;
+    eloict:hasLecturer eloict:P_Demeester , eloict:J_Van_de_Walle , eloict:K_Verbeeck .
+
+eloict:MedischeInformatica a eloict:CourseUnit , eloict:Elective ;
+    rdfs:label "Medische Informatica"@nl ;
+    eloict:courseCode "OBM27A" ;
+    eloict:hasCredits 3 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:R_Decoster ;
+    eloict:hasLecturer eloict:R_Decoster .

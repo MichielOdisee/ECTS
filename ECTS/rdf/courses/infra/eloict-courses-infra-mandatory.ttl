@@ -1,0 +1,86 @@
+@prefix eloict: <http://odisee.be/eloict#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+
+
+eloict:NetworkInfrastructure1 a eloict:CourseUnit ;
+    rdfs:label "Network Infrastructure 1"@nl ;
+    eloict:courseCode "OGI02M" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:hasCoordinator eloict:S_Fabre ;
+    eloict:hasLecturer eloict:S_Fabre, eloict:T_Cordemans, eloict:S_Knockaert, eloict:S_Sanders .
+
+eloict:ServerInfrastructureWindows a eloict:CourseUnit ;
+    rdfs:label "Server Infrastructure: Windows"@nl ;
+    eloict:courseCode "OGI02N" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:NetworkInfrastructure1 ;
+    eloict:hasCoordinator eloict:E_Jacobs ;
+    eloict:hasLecturer eloict:S_Fabre, eloict:E_Jacobs .
+
+eloict:NetworkInfrastructure2 a eloict:CourseUnit ;
+    rdfs:label "Network Infrastructure 2"@nl ;
+    eloict:courseCode "OGI02T" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:NetworkInfrastructure1 ;
+    eloict:hasCoordinator eloict:S_Knockaert ;
+    eloict:hasLecturer eloict:S_Fabre, eloict:S_Knockaert .
+
+eloict:ServerInfrastructureLinux a eloict:CourseUnit ;
+    rdfs:label "Server Infrastructure: Linux"@nl ;
+    eloict:courseCode "OGI02U" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:NetworkInfrastructure1 ;
+    eloict:hasCoordinator eloict:T_Vermeulen ;
+    eloict:hasLecturer eloict:E_Jacobs, eloict:S_Sanders, eloict:T_Vermeulen .
+
+eloict:DataSecurity a eloict:CourseUnit ;
+    rdfs:label "Data Security"@nl ;
+    eloict:courseCode "OGI02V" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase2 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:NetworkInfrastructure1 ;
+    eloict:hasCoordinator eloict:S_Sanders ;
+    eloict:hasLecturer eloict:T_Cordemans, eloict:S_Sanders .
+
+eloict:InfrastructureAsCode a eloict:CourseUnit ;
+    rdfs:label "Infrastructure as Code"@nl ;
+    eloict:courseCode "OGI02W" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S2 ;
+    eloict:requiresCourse eloict:NetworkInfrastructure2, eloict:DataSecurity ;
+    eloict:hasCoordinator eloict:R_Van_Steenberghe ;
+    eloict:hasLecturer eloict:S_Knockaert, eloict:R_Van_Steenberghe .
+
+eloict:SecurityInfrastructure a eloict:CourseUnit ;
+    rdfs:label "Security Infrastructure"@nl ;
+    eloict:courseCode "OGI03V" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:DataSecurity ;
+    eloict:hasCoordinator eloict:S_Sanders ;
+    eloict:hasLecturer eloict:S_Fabre, eloict:S_Sanders .
+
+eloict:CloudInfrastructure a eloict:CourseUnit ;
+    rdfs:label "Cloud Infrastructure"@nl ;
+    eloict:courseCode "OGI03W" ;
+    eloict:hasCredits 6 ;
+    eloict:belongsToPhase eloict:Phase3 ;
+    eloict:belongsToSemester eloict:S1 ;
+    eloict:requiresCourse eloict:ServerInfrastructureLinux ;
+    eloict:hasCoordinator eloict:R_Van_Steenberghe ;
+    eloict:hasLecturer eloict:S_Knockaert, eloict:R_Van_Steenberghe .

@@ -1,0 +1,605 @@
+PREFIX eloict: <http://odisee.be/eloict#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+
+eloict:hasCredits  rdf:type  rdf:Property .
+
+eloict:courseCode  rdf:type  rdf:Property .
+
+eloict:hasLecturer  rdf:type  rdf:Property .
+
+eloict:hasCoordinator
+        rdf:type  rdf:Property .
+
+eloict:ElektronischeNetwerken
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Elektronische Netwerken"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02B";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:M_Wyns;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:M_Wyns , eloict:D_Claus , eloict:M_De_Donder , eloict:E_Van_Nechel .
+
+eloict:ProgrammingFundamentals
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Programming Fundamentals"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02C";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:K_Verbeeck;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:K_Verbeeck , eloict:Y_Blancquaert , eloict:E_Jacobs , eloict:S_Sanders , eloict:K_Van_Assche , eloict:T_Van_den_Bossche .
+
+eloict:WebFundamentals
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Web Fundamentals"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02D";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:B_Delrue;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:B_Delrue , eloict:R_De_Wilde , eloict:D_De_Winne .
+
+eloict:InfrastructureFundamentals
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Infrastructure Fundamentals"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02E";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:E_Jacobs;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:E_Jacobs , eloict:T_Cordemans , eloict:S_Fabre .
+
+eloict:Phase1  rdf:type  eloict:Phase;
+        rdfs:label  "Phase 1"@nl .
+
+eloict:Phase2  rdf:type  eloict:Phase;
+        rdfs:label  "Phase 2"@nl .
+
+eloict:Phase3  rdf:type  eloict:Phase;
+        rdfs:label  "Phase 3"@nl .
+
+eloict:S1  rdf:type  eloict:Semester;
+        rdfs:label  "Semester 1"@nl .
+
+eloict:S2  rdf:type  eloict:Semester;
+        rdfs:label  "Semester 2"@nl .
+
+eloict:requiresCourse
+        rdf:type    rdf:Property;
+        rdfs:label  "verplicht voorafgaand vak"@nl .
+
+eloict:recommendedBeforeCourse
+        rdf:type    rdf:Property;
+        rdfs:label  "aanbevolen volgorde"@nl .
+
+eloict:excludesCourse
+        rdf:type    rdf:Property;
+        rdfs:label  "sluit uit"@nl .
+
+eloict:Programming  rdf:type  eloict:SkillGroup;
+        rdfs:label  "Programming" .
+
+eloict:Web  rdf:type  eloict:SkillGroup;
+        rdfs:label  "Web Technologies" .
+
+eloict:Networks  rdf:type  eloict:SkillGroup;
+        rdfs:label  "Network and Datasecurity" .
+
+eloict:Electronics  rdf:type  eloict:SkillGroup;
+        rdfs:label  "Electronics" .
+
+eloict:CoreSkills  rdf:type  eloict:SkillGroup;
+        rdfs:label  "Core Academic Skills" .
+
+eloict:Skill_WebBasics
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Web .
+
+eloict:Skill_Java  rdf:type  eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_OOP  rdf:type  eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_DataStructures
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_Collections
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_Interfaces
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_PythonBasics
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_ProgrammingLogic
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Programming .
+
+eloict:Skill_Components
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Electronics .
+
+eloict:Skill_NetworkBasics
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:Networks .
+
+eloict:Skill_Ethics  rdf:type  eloict:Skill;
+        eloict:inGroup  eloict:CoreSkills .
+
+eloict:Skill_ComputerArchitecture
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:CoreSkills .
+
+eloict:Skill_ScientificWriting
+        rdf:type        eloict:Skill;
+        eloict:inGroup  eloict:CoreSkills .
+
+eloict:belongsToPhase
+        rdf:type  rdf:Property .
+
+eloict:belongsToSemester
+        rdf:type  rdf:Property .
+
+eloict:courseType  rdf:type  rdf:Property .
+
+eloict:M_Wyns  rdf:type  eloict:Lecturer;
+        rdfs:label  "M. Wyns" .
+
+eloict:D_Claus  rdf:type  eloict:Lecturer;
+        rdfs:label  "D. Claus" .
+
+eloict:M_De_Donder  rdf:type  eloict:Lecturer;
+        rdfs:label  "M. De Donder" .
+
+eloict:E_Van_Nechel  rdf:type  eloict:Lecturer;
+        rdfs:label  "E. Van Nechel" .
+
+eloict:teachesSkill  rdf:type  rdf:Property .
+
+eloict:K_Verbeeck  rdf:type  eloict:Lecturer;
+        rdfs:label  "K. Verbeeck" .
+
+eloict:Y_Blancquaert  rdf:type  eloict:Lecturer;
+        rdfs:label  "Y. Blancquaert" .
+
+eloict:E_Jacobs  rdf:type  eloict:Lecturer;
+        rdfs:label  "E. Jacobs" .
+
+eloict:S_Sanders  rdf:type  eloict:Lecturer;
+        rdfs:label  "S. Sanders" .
+
+eloict:K_Van_Assche  rdf:type  eloict:Lecturer;
+        rdfs:label  "K. Van Assche" .
+
+eloict:T_Van_den_Bossche
+        rdf:type    eloict:Lecturer;
+        rdfs:label  "T. Van den Bossche" .
+
+eloict:B_Delrue  rdf:type  eloict:Lecturer;
+        rdfs:label  "B. Delrue" .
+
+eloict:R_De_Wilde  rdf:type  eloict:Lecturer;
+        rdfs:label  "R. De Wilde" .
+
+eloict:D_De_Winne  rdf:type  eloict:Lecturer;
+        rdfs:label  "D. De Winne" .
+
+eloict:T_Cordemans  rdf:type  eloict:Lecturer;
+        rdfs:label  "T. Cordemans" .
+
+eloict:S_Fabre  rdf:type  eloict:Lecturer;
+        rdfs:label  "S. Fabre" .
+
+eloict:FundamentalSkills
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Fundamental Skills"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI06E";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:P_Demeester;
+        eloict:hasCredits         3;
+        eloict:hasLecturer        eloict:Y_Blancquaert , eloict:P_Demeester , eloict:L_Bracke , eloict:J_Van_de_Walle .
+
+eloict:P_Demeester  rdf:type  eloict:Lecturer;
+        rdfs:label  "P. Demeester" .
+
+eloict:L_Bracke  rdf:type  eloict:Lecturer;
+        rdfs:label  "L. Bracke" .
+
+eloict:J_Van_de_Walle
+        rdf:type    eloict:Lecturer;
+        rdfs:label  "J. Van de Walle" .
+
+eloict:OOProgramming  rdf:type          eloict:CourseUnit;
+        rdfs:label                      "OO Programming"@nl;
+        eloict:belongsToPhase           eloict:Phase1;
+        eloict:belongsToSemester        eloict:S2;
+        eloict:courseCode               "OGI05F";
+        eloict:courseType               eloict:Mandatory;
+        eloict:hasCoordinator           eloict:K_Van_Assche;
+        eloict:hasCredits               6;
+        eloict:hasLecturer              eloict:M_Wyns , eloict:K_Verbeeck , eloict:Y_Blancquaert , eloict:E_Jacobs , eloict:K_Van_Assche , eloict:T_Vermeulen;
+        eloict:recommendedBeforeCourse  eloict:ProgrammingFundamentals;
+        eloict:teachesSkill             eloict:Skill_Java , eloict:Skill_OOP , eloict:Skill_Collections , eloict:Skill_Interfaces .
+
+eloict:T_Vermeulen  rdf:type  eloict:Lecturer;
+        rdfs:label  "T. Vermeulen" .
+
+eloict:Beroepsethiek  rdf:type    eloict:CourseUnit;
+        rdfs:label                "Beroepsethiek"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02R";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:H_Vanderper;
+        eloict:hasCredits         3;
+        eloict:hasLecturer        eloict:H_Vanderper .
+
+eloict:H_Vanderper  rdf:type  eloict:Lecturer;
+        rdfs:label  "H. Vanderper" .
+
+eloict:Hackathon  rdf:type        eloict:CourseUnit;
+        rdfs:label                "Hackathon"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI02H";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:T_Vermeulen;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:M_Wyns , eloict:D_Claus , eloict:S_Sanders , eloict:S_Fabre , eloict:T_Vermeulen , eloict:P_Coussens .
+
+eloict:P_Coussens  rdf:type  eloict:Lecturer;
+        rdfs:label  "P. Coussens" .
+
+eloict:ProjectWetenschappelijkRapporteren
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Project & Wetenschappelijk Rapporteren"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI02S";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:S_Sanders;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Sanders , eloict:S_Martens;
+        eloict:requiresCourse     eloict:DatabaseProgramming;
+        eloict:teachesSkill       eloict:Skill_ScientificWriting .
+
+eloict:S_Martens  rdf:type  eloict:Lecturer;
+        rdfs:label  "S. Martens" .
+
+eloict:DatabaseProgramming
+        rdf:type                        eloict:CourseUnit;
+        rdfs:label                      "Database Programming"@nl;
+        eloict:belongsToPhase           eloict:Phase1;
+        eloict:belongsToSemester        eloict:S2;
+        eloict:courseCode               "OGI05G";
+        eloict:courseType               eloict:Mandatory;
+        eloict:hasCredits               6;
+        eloict:hasLecturer              eloict:K_Verbeeck , eloict:Y_Blancquaert , eloict:P_Demeester;
+        eloict:recommendedBeforeCourse  eloict:ProgrammingFundamentals .
+
+eloict:ITEssentials  rdf:type     eloict:CourseUnit;
+        rdfs:label                "IT Essentials"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI06F";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCredits         3;
+        eloict:hasLecturer        eloict:K_Verbeeck , eloict:Y_Blancquaert , eloict:P_Demeester .
+
+eloict:AgileTeamProject
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Agile Team Project"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI06N";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:Y_Blancquaert;
+        eloict:hasCredits         9;
+        eloict:hasLecturer        eloict:K_Verbeeck , eloict:Y_Blancquaert , eloict:P_Demeester;
+        eloict:requiresCourse     eloict:ProjectWetenschappelijkRapporteren .
+
+eloict:L_Knop  rdf:type  eloict:Lecturer;
+        rdfs:label  "L. Knop" .
+
+eloict:B_De_Waele  rdf:type  eloict:Lecturer;
+        rdfs:label  "B. De Waele" .
+
+eloict:S_Knockaert  rdf:type  eloict:Lecturer;
+        rdfs:label  "S. Knockaert" .
+
+eloict:R_Van_Steenberghe
+        rdf:type    eloict:Lecturer;
+        rdfs:label  "R. Van Steenberghe" .
+
+eloict:A_Abdul_Khalil
+        rdf:type    eloict:Lecturer;
+        rdfs:label  "A. Abdul Khalil" .
+
+eloict:P_Van_Peteghem
+        rdf:type    eloict:Lecturer;
+        rdfs:label  "P. Van Peteghem" .
+
+eloict:E_Mettepenningen
+        rdf:type    eloict:Lecturer;
+        rdfs:label  "E. Mettepenningen" .
+
+eloict:S_Vrijdags  rdf:type  eloict:Lecturer;
+        rdfs:label  "S. Vrijdags" .
+
+eloict:E_Peeters  rdf:type  eloict:Lecturer;
+        rdfs:label  "E. Peeters" .
+
+eloict:R_Decoster  rdf:type  eloict:Lecturer;
+        rdfs:label  "R. Decoster" .
+
+eloict:M_Vanleke  rdf:type  eloict:Lecturer;
+        rdfs:label  "M. Vanleke" .
+
+eloict:J_Maervoet  rdf:type  eloict:Lecturer;
+        rdfs:label  "J. Maervoet" .
+
+eloict:J_De_Geest  rdf:type  eloict:Lecturer;
+        rdfs:label  "J. De Geest" .
+
+eloict:H_Stevens  rdf:type  eloict:Lecturer;
+        rdfs:label  "H. Stevens" .
+
+eloict:WebDeveloper  eloict:hasMandatoryCourse
+                eloict:JavascriptDevelopment , eloict:BackendDevelopment , eloict:FullstackIntro , eloict:WebFrameworks , eloict:FullstackAdvanced , eloict:MobileAppDevelopment .
+
+eloict:JavascriptDevelopment
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Javascript Development"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI06H";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:R_De_Wilde;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:R_De_Wilde;
+        eloict:requiresCourse     eloict:FrontendDesign;
+        eloict:teachesSkill       eloict:Skill_ProgrammingLogic .
+
+eloict:BackendDevelopment
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Back-end Development"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI05H";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:S_Fabre;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Fabre;
+        eloict:requiresCourse     eloict:ProgrammingFundamentals , eloict:JavascriptDevelopment;
+        eloict:teachesSkill       eloict:Skill_WebBasics .
+
+eloict:FullstackIntro
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Full-stack Introduction"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI05I";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:S_Fabre;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Fabre;
+        eloict:requiresCourse     eloict:JavascriptDevelopment , eloict:BackendDevelopment;
+        eloict:teachesSkill       eloict:Skill_WebBasics .
+
+eloict:WebFrameworks  rdf:type    eloict:CourseUnit;
+        rdfs:label                "Web Frameworks"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI06I";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:P_Coussens;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:P_Coussens;
+        eloict:requiresCourse     eloict:JavascriptDevelopment;
+        eloict:teachesSkill       eloict:Skill_WebBasics .
+
+eloict:FullstackAdvanced
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Full-stack Advanced"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI06J";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:P_Coussens;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:P_Coussens;
+        eloict:requiresCourse     eloict:JavascriptDevelopment , eloict:BackendDevelopment , eloict:FullstackIntro;
+        eloict:teachesSkill       eloict:Skill_WebBasics .
+
+eloict:MobileAppDevelopment
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Mobile Application Development"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI03Z";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:S_Fabre;
+        eloict:hasCredits         12;
+        eloict:hasLecturer        eloict:S_Fabre;
+        eloict:requiresCourse     eloict:FullstackIntro , eloict:WebFrameworks;
+        eloict:teachesSkill       eloict:Skill_WebBasics .
+
+eloict:NetworkSecurityEngineer
+        eloict:hasMandatoryCourse  eloict:NetworkInfrastructure1 , eloict:ServerInfrastructureWindows , eloict:NetworkInfrastructure2 , eloict:ServerInfrastructureLinux , eloict:DataSecurity , eloict:InfrastructureAsCode , eloict:CloudInfrastructure , eloict:SecurityInfrastructure .
+
+eloict:NetworkInfrastructure1
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Network Infrastructure 1"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02M";
+        eloict:hasCoordinator     eloict:S_Fabre;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Sanders , eloict:T_Cordemans , eloict:S_Fabre , eloict:S_Knockaert .
+
+eloict:ServerInfrastructureWindows
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Server Infrastructure: Windows"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02N";
+        eloict:hasCoordinator     eloict:E_Jacobs;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:E_Jacobs , eloict:S_Fabre;
+        eloict:requiresCourse     eloict:NetworkInfrastructure1 .
+
+eloict:NetworkInfrastructure2
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Network Infrastructure 2"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI02T";
+        eloict:hasCoordinator     eloict:S_Knockaert;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Fabre , eloict:S_Knockaert;
+        eloict:requiresCourse     eloict:NetworkInfrastructure1 .
+
+eloict:ServerInfrastructureLinux
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Server Infrastructure: Linux"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI02U";
+        eloict:hasCoordinator     eloict:T_Vermeulen;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:E_Jacobs , eloict:S_Sanders , eloict:T_Vermeulen;
+        eloict:requiresCourse     eloict:NetworkInfrastructure1 .
+
+eloict:DataSecurity  rdf:type     eloict:CourseUnit;
+        rdfs:label                "Data Security"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI02V";
+        eloict:hasCoordinator     eloict:S_Sanders;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Sanders , eloict:T_Cordemans;
+        eloict:requiresCourse     eloict:NetworkInfrastructure1 .
+
+eloict:InfrastructureAsCode
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Infrastructure as Code"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02W";
+        eloict:hasCoordinator     eloict:R_Van_Steenberghe;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Knockaert , eloict:R_Van_Steenberghe;
+        eloict:requiresCourse     eloict:NetworkInfrastructure2 , eloict:DataSecurity .
+
+eloict:CloudInfrastructure
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Cloud Infrastructure"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI03W";
+        eloict:hasCoordinator     eloict:R_Van_Steenberghe;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Knockaert , eloict:R_Van_Steenberghe;
+        eloict:requiresCourse     eloict:ServerInfrastructureLinux .
+
+eloict:SecurityInfrastructure
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Security Infrastructure"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI03V";
+        eloict:hasCoordinator     eloict:S_Sanders;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:S_Sanders , eloict:S_Fabre;
+        eloict:requiresCourse     eloict:DataSecurity .
+
+eloict:SoftwareAIDeveloper
+        eloict:hasMandatoryCourse  eloict:DotNETProgramming , eloict:DotNETAdvanced , eloict:AlgoData , eloict:DataScience , eloict:AppliedProgramming , eloict:AIProgramming .
+
+eloict:DotNETProgramming
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                ".NET Programming"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02X";
+        eloict:hasCoordinator     eloict:Y_Blancquaert;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:Y_Blancquaert , eloict:E_Jacobs , eloict:K_Van_Assche .
+
+eloict:DotNETAdvanced
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                ".NET Advanced Programming"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI02Y";
+        eloict:hasCoordinator     eloict:Y_Blancquaert;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:Y_Blancquaert , eloict:K_Van_Assche , eloict:T_Vermeulen;
+        eloict:requiresCourse     eloict:DotNETProgramming .
+
+eloict:AlgoData  rdf:type         eloict:CourseUnit;
+        rdfs:label                "Algo & Data"@nl;
+        eloict:belongsToPhase     eloict:Phase2;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI02Z";
+        eloict:hasCoordinator     eloict:P_Demeester;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:K_Verbeeck , eloict:P_Demeester .
+
+eloict:DataScience  rdf:type      eloict:CourseUnit;
+        rdfs:label                "Data Science"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI03A";
+        eloict:hasCoordinator     eloict:K_Verbeeck;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:K_Verbeeck , eloict:P_Demeester;
+        eloict:requiresCourse     eloict:AlgoData .
+
+eloict:AppliedProgramming
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Applied Programming"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI03X";
+        eloict:hasCoordinator     eloict:T_Vermeulen;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:T_Vermeulen , eloict:J_Maervoet;
+        eloict:requiresCourse     eloict:DotNETProgramming .
+
+eloict:AIProgramming  rdf:type    eloict:CourseUnit;
+        rdfs:label                "Artificial Intelligence"@nl;
+        eloict:belongsToPhase     eloict:Phase3;
+        eloict:belongsToSemester  eloict:S2;
+        eloict:courseCode         "OGI03Y";
+        eloict:hasCoordinator     eloict:Y_Blancquaert;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:Y_Blancquaert , eloict:E_Jacobs , eloict:K_Van_Assche;
+        eloict:requiresCourse     eloict:AlgoData .
+
+eloict:FrontendDesign
+        rdf:type                  eloict:CourseUnit;
+        rdfs:label                "Front-end Design"@nl;
+        eloict:belongsToPhase     eloict:Phase1;
+        eloict:belongsToSemester  eloict:S1;
+        eloict:courseCode         "OGI06G";
+        eloict:courseType         eloict:Mandatory;
+        eloict:hasCoordinator     eloict:B_Delrue;
+        eloict:hasCredits         6;
+        eloict:hasLecturer        eloict:B_Delrue;
+        eloict:teachesSkill       eloict:Skill_WebBasics .

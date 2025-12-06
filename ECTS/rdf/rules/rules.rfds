@@ -1,0 +1,57 @@
+PREFIX eloict: <http://odisee.be/eloict#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT {
+    ?spec eloict:hasMandatoryCourse ?course .
+}
+WHERE {
+    eloict:ICTTrack eloict:hasGeneralCourse ?course .
+    ?spec a eloict:Specialisation ;
+          eloict:partOfTrack eloict:ICTTrack .
+}
+
+
+
+CONSTRUCT {
+    ?spec eloict:offersCourse ?course .
+}
+WHERE {
+    { ?spec eloict:hasMandatoryCourse ?course . }
+    UNION
+    {
+        eloict:ICTTrack eloict:hasGeneralCourse ?course .
+        ?spec a eloict:Specialisation ;
+              eloict:partOfTrack eloict:ICTTrack .
+    }
+}
+
+
+CONSTRUCT {
+    ?student eloict:mustTakeCourse ?course .
+}
+WHERE {
+    ?student eloict:followsSpecialisation ?spec .
+    ?spec eloict:hasMandatoryCourse ?course .
+}
+
+
+
+CONSTRUCT {
+    ?course eloict:needsBefore ?req .
+}
+WHERE {
+    ?course eloict:requiresCourse ?req .
+}
+
+
+
+CONSTRUCT {
+    ?course eloict:missingMetadata "true" .
+}
+WHERE {
+    ?course a eloict:CourseUnit .
+    FILTER NOT EXISTS { ?course eloict:belongsToPhase ?p }
+    UNION
+    FILTER NOT EXISTS { ?course eloict:belongsToSemester ?s }
+}
