@@ -1,4 +1,4 @@
-PREFIX eloict: <http://odisee.be/eloict#>
+PREFIX eloict: <https://michielodisee.github.io/ECTS/eloict#>
 PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
@@ -803,3 +803,168 @@ eloict:FullstackIntroduction
 
 eloict:ICTTrack  rdf:type        eloict:Track;
         eloict:hasGeneralCourse  eloict:ElektronischeNetwerken , eloict:ProgrammingFundamentals , eloict:WebFundamentals , eloict:InfrastructureFundamentals , eloict:FundamentalSkills , eloict:OOProgramming , eloict:Beroepsethiek , eloict:Hackathon , eloict:ProjectWetenschappelijkRapporteren , eloict:DatabaseProgramming , eloict:ITEssentials , eloict:AgileTeamProject .
+
+PREFIX eloict: <http://odisee.be/eloict#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+
+eloict:MedischeInformatica
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OBM27AN> .
+
+eloict:VoorbereidingWiskundeMaster
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05DN> .
+
+eloict:Ondernemen  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OI3006N> .
+
+eloict:UnlimitedLearning
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04UN> .
+
+eloict:AcademischeMobiliteit
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04TN> .
+
+eloict:MobiliteitFull
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04SN> .
+
+eloict:MobiliteitLight
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04PN> .
+
+eloict:PersoonlijkOntwikkelingsplan
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04ON> .
+
+eloict:EntrepreneurialSkills
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OAB15AN> .
+
+eloict:Telecommunicatie_S2
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03RN> .
+
+eloict:Telecommunicatie_S1
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03RN> .
+
+eloict:Signaalverwerking_S2
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05MN> .
+
+eloict:Signaalverwerking_S1
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03NN> .
+
+eloict:GameDevelopmentUnityCSharp
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05KN> .
+
+eloict:WebTopics_S2  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04JN> .
+
+eloict:WebTopics_S1  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03MN> .
+
+eloict:UXDesign  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03LN> .
+
+eloict:IoTEmbeddedLinux
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI04NN> .
+
+eloict:IoTDatacommunicatie
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03SN> .
+
+eloict:IoTMicrocontrollers_S2
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05JN> .
+
+eloict:IoTMicrocontrollers_S1
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03EN> .
+
+eloict:Filters  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03QN> .
+
+eloict:AnalogeSystemen
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03DN> .
+
+eloict:ElektronischeUitvoeringstechnieken
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06LN> .
+
+eloict:ElektronischeOntwerptechnieken
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06KN> .
+
+eloict:CloudInfrastructure
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03WN> .
+
+eloict:SecurityInfrastructure
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03VN> .
+
+eloict:InfrastructureAsCode
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02WN> .
+
+eloict:DataSecurity  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02VN> .
+
+eloict:ServerInfrastructureLinux
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02UN> .
+
+eloict:NetworkInfrastructure2
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02TN> .
+
+eloict:ServerInfrastructureWindows
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02NN> .
+
+eloict:NetworkInfrastructure1
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02MN> .
+
+eloict:AIProgramming  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03YN> .
+
+eloict:AppliedProgramming
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03XN> .
+
+eloict:DataScience  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03AN> .
+
+eloict:AlgoData  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02ZN> .
+
+eloict:DotNETAdvanced
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02YN> .
+
+eloict:DotNETProgramming
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02XN> .
+
+eloict:MobileAppDevelopment
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI03ZN> .
+
+eloict:FullstackAdvanced
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06JN> .
+
+eloict:WebFrameworks  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06IN> .
+
+eloict:FullstackIntroduction
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05IN> .
+
+eloict:BackendDevelopment
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05HN> .
+
+eloict:JavascriptDevelopment
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06HN> .
+
+eloict:FrontendDesign
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06GN> .
+
+eloict:AgileTeamProject
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06NN> .
+
+eloict:ITEssentials  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06FN> .
+
+eloict:DatabaseProgramming
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05GN> .
+
+eloict:ProjectWetenschappelijkRapporteren
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02SN> .
+
+eloict:Hackathon  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02HN> .
+
+eloict:Beroepsethiek  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02RN> .
+
+eloict:OOProgramming  rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI05FN> .
+
+eloict:FundamentalSkills
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI06EN> .
+
+eloict:InfrastructureFundamentals
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02EN> .
+
+eloict:WebFundamentals
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02DN> .
+
+eloict:ProgrammingFundamentals
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02CN> .
+
+eloict:ElektronischeNetwerken
+        rdfs:seeAlso  <https://onderwijsaanbod.odisee.be/syllabi/n/OGI02BN> .
