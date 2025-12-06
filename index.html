@@ -44,9 +44,35 @@ De dataset bevat alle vakken, docenten, studiepunten, skills en prerequisites in
 <h2>🧠 Voorbeeld SPARQL Query</h2>
 <pre>
 PREFIX eloict: <http://odisee.be/eloict#>
-PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?vak ?naam ?credits WHERE {
+SELECT 
+    (STRAFTER(STR(?vak),"#") AS ?vakID)
+    ?naam
+    ?code
+    (CONCAT(STR(?credits)," SP") AS ?studiepunten)
+    (STRAFTER(STR(?sem),"#") AS ?semester)
+    (STRAFTER(STR(?ph),"#") AS ?phase)
+    (GROUP_CONCAT(DISTINCT ?lectNaam; SEPARATOR=", ") AS ?docenten)
+    ?coordinatorNaam
+WHERE {
     ?vak a eloict:CourseUnit ;
          rdfs:label ?naam ;
-         eloict:hasCredits ?
+         eloict:courseCode ?code ;
+         eloict:hasCredits ?credits ;
+         eloict:belongsToSemester ?sem ;
+         eloict:belongsToPhase ?ph .
+
+    OPTIONAL{
+        ?vak eloict:hasLecturer ?lect .
+        ?lect rdfs:label ?lectNaam .
+    }
+
+    OPTIONAL{
+        ?vak eloict:hasCoordinator ?coord .
+        ?coord rdfs:label ?coordinatorNaam .
+    }
+}
+GROUP BY ?vak ?naam ?code ?credits ?sem ?ph ?coordinatorNaam
+ORDER BY ?phase ?semester ?naam
+
