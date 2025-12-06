@@ -1,1 +1,40 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>ELOICT Linked Data</title>
+<style>
+body{font-family:Arial;max-width:900px;margin:auto;padding:30px;line-height:1.6;}
+code{background:#f5f5f5;padding:3px 6px;border-radius:4px;}
+pre{background:#f5f5f5;padding:12px;border-left:4px solid #2c7be5;}
+h1 span{color:#2c7be5;}
+</style>
+</head>
+<body>
+
+<h1><span>📊</span> ELOICT Linked Data</h1>
+<p>Dit is de officiële Linked Data dataset van de opleiding <b>ELO ICT (Odisee)</b>. 
+De dataset bevat alle vakken, docenten, studiepunten, skills en prerequisites in RDF/Turtle.</p>
+
+<h2>🔗 Namespace</h2>
+<pre>https://michielodisee.github.io/eloict-linked-data#</pre>
+
+<h2>📥 Download dataset</h2>
+<pre><a href="eloict.ttl">eloict.ttl</a></pre>
+
+<h2>SPARQL Voorbeeld</h2>
+<pre>
+PREFIX eloict: &lt;https://michielodisee.github.io/eloict-linked-data#&gt;
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?vak ?naam ?credits WHERE {
+  ?vak a eloict:CourseUnit ;
+       rdfs:label ?naam ;
+       eloict:hasCredits ?credits .
+} ORDER BY ?naam
+</pre>
+
+<p>Project door <b>Michiel Van de Velde</b></p>
+</body>
+</html>
