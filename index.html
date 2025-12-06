@@ -1,78 +1,154 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>ELOICT Linked Data</title>
-<style>
-body{
-    font-family:Arial, sans-serif;
-    max-width:900px;
-    margin:40px auto;
-    padding:30px;
-    line-height:1.6;
-}
-code, pre{
-    background:#f5f5f5;
-    padding:12px;
-    border-radius:6px;
-    display:block;
-    white-space:pre-wrap;
-}
-h1{color:#2c7be5;margin-bottom:5px;}
-a{color:#2c7be5;font-weight:bold;text-decoration:none;}
-a:hover{text-decoration:underline;}
-footer{margin-top:40px;font-size:14px;color:#555;}
-</style>
+  <meta charset="UTF-8">
+  <title>ELO ICT – Linked Data Dataset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --accent:#2c7be5;
+      --bg-light:#f5f5f5;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      max-width:900px;
+      margin:40px auto;
+      padding:30px 20px;
+      line-height:1.6;
+      color:#222;
+    }
+
+    h1{
+      color:var(--accent);
+      margin-bottom:0.25rem;
+    }
+
+    h2{
+      margin-top:2rem;
+      margin-bottom:0.4rem;
+    }
+
+    p{
+      margin:0.4rem 0 0.2rem;
+    }
+
+    .context{
+      background:#eef5ff;
+      border-left:4px solid var(--accent);
+      padding:10px 14px;
+      border-radius:4px;
+      margin:1rem 0 1.5rem;
+      font-size:0.95rem;
+    }
+
+    code, pre{
+      background:var(--bg-light);
+      padding:12px;
+      border-radius:6px;
+      display:block;
+      white-space:pre-wrap;
+      font-family:Consolas, "Fira Code", monospace;
+      font-size:0.9rem;
+    }
+
+    a{
+      color:var(--accent);
+      font-weight:bold;
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      margin-top:40px;
+      font-size:0.85rem;
+      color:#555;
+      border-top:1px solid #ddd;
+      padding-top:10px;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>ELOICT – Linked Data Dataset</h1>
-<p>
-Dit is een open RDF-dataset van de opleiding <b>ELO ICT (Odisee Hogeschool)</b>.
-De dataset bevat alle vakken, docenten, studiepunten, skills en prerequisites in <b>Turtle (.ttl)</b> formaat.
-</p>
+  <h1>ELO ICT – Linked Data Dataset</h1>
+  <p><b>RDF-dataset van de opleiding ELO ICT (Odisee Hogeschool)</b></p>
 
-<h2>🔗 Dataset online browsen</h2>
-<p><a href="https://michielodisee.github.io/ECTS/">https://michielodisee.github.io/ECTS/</a></p>
+  <div class="context">
+    <b>Projectcontext:</b> deze linked-data set is uitgewerkt in het kader van het vak
+    <b>POP (Persoonlijk OntwikkelingsProject)</b> binnen de opleiding ELO ICT.
+    De data is samengesteld door een student en is geen officieel Odisee-product,
+    maar verwijst wel naar officiële cursusfiches via <code>rdfs:seeAlso</code>.
+  </div>
 
-<h2>📥 Download dataset</h2>
-<p>
-<a href="full-new.ttl" download>⭳ full-new.ttl</a>
-</p>
+  <p>
+    De dataset beschrijft alle vakken, docenten, studiepunten, skills en
+    relaties (zoals prerequisites en specialisaties) in
+    <b>Turtle (.ttl)</b>-formaat. De URI-ruimte wordt genormaliseerd onder
+    <code>http://odisee.be/eloict#</code>, zodat de data eenvoudig te hergebruiken
+    is in SPARQL-endpoints en knowledge graphs.
+  </p>
 
-<h2>🧠 Voorbeeld SPARQL Query</h2>
-<pre>
-PREFIX eloict: <http://odisee.be/eloict#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  <h2>🔗 Dataset online browsen</h2>
+  <p>
+    <a href="https://michielodisee.github.io/ECTS/">
+      https://michielodisee.github.io/ECTS/
+    </a>
+  </p>
+
+  <h2>📥 Download dataset</h2>
+  <p>
+    <a href="full-new.ttl" download>⭳ full-new.ttl</a><br>
+    <small>(volledige Turtle-export met vakken, docenten, skills en links naar onderwijsaanbod)</small>
+  </p>
+
+  <h2>🧠 Voorbeeld SPARQL-query</h2>
+  <p>
+    Onderstaande query geeft een professioneel overzicht van alle
+    <code>eloict:CourseUnit</code>-vakken met code, studiepunten, semester,
+    fase, docenten en coördinator.
+  </p>
+
+  <pre><code>PREFIX eloict: &lt;http://odisee.be/eloict#&gt;
+PREFIX rdfs:   &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
 SELECT 
-    (STRAFTER(STR(?vak),"#") AS ?vakID)
+    (STRAFTER(STR(?vak), "#") AS ?vakID)
     ?naam
     ?code
-    (CONCAT(STR(?credits)," SP") AS ?studiepunten)
-    (STRAFTER(STR(?sem),"#") AS ?semester)
-    (STRAFTER(STR(?ph),"#") AS ?phase)
+    (CONCAT(STR(?credits), " SP") AS ?studiepunten)
+    (STRAFTER(STR(?sem), "#") AS ?semester)
+    (STRAFTER(STR(?ph),  "#") AS ?fase)
     (GROUP_CONCAT(DISTINCT ?lectNaam; SEPARATOR=", ") AS ?docenten)
     ?coordinatorNaam
 WHERE {
     ?vak a eloict:CourseUnit ;
-         rdfs:label ?naam ;
-         eloict:courseCode ?code ;
-         eloict:hasCredits ?credits ;
+         rdfs:label            ?naam ;
+         eloict:courseCode     ?code ;
+         eloict:hasCredits     ?credits ;
          eloict:belongsToSemester ?sem ;
-         eloict:belongsToPhase ?ph .
+         eloict:belongsToPhase    ?ph .
 
-    OPTIONAL{
-        ?vak eloict:hasLecturer ?lect .
-        ?lect rdfs:label ?lectNaam .
+    OPTIONAL {
+        ?vak  eloict:hasLecturer  ?lect .
+        ?lect rdfs:label          ?lectNaam .
     }
 
-    OPTIONAL{
-        ?vak eloict:hasCoordinator ?coord .
-        ?coord rdfs:label ?coordinatorNaam .
+    OPTIONAL {
+        ?vak   eloict:hasCoordinator ?coord .
+        ?coord rdfs:label            ?coordinatorNaam .
     }
 }
 GROUP BY ?vak ?naam ?code ?credits ?sem ?ph ?coordinatorNaam
-ORDER BY ?phase ?semester ?naam
+ORDER BY ?fase ?semester ?naam
+</code></pre>
 
+  <footer>
+    Gemaakt door Michiel Van de Velde (ELO ICT, Odisee) – POP-project Linked Data ECTS.
+  </footer>
+
+</body>
+</html>
